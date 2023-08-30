@@ -1,0 +1,241 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 681,
+      "width": 526
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "lblTitle"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "props": {
+          "style": {
+            "fontSize": 30,
+            "fontWeight": "bold",
+            "margin": 5
+          },
+          "text": "Alarm Repeater Demo"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "lblTitleUDT"
+            },
+            "props": {
+              "style": {
+                "fontSize": 20,
+                "fontWeight": "bold"
+              },
+              "text": "Alarms on an UDT tag"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "evRepeater"
+            },
+            "props": {
+              "params": {
+                "alarmReplaceNameOriginal": [],
+                "alarmReplaceNameValue": [],
+                "element_MarginBot": "2px",
+                "element_MarginLeft": "0px",
+                "element_MarginRight": "15px",
+                "element_MarginTop": "0px",
+                "element_pos_basis": "auto",
+                "element_pos_grow": 1,
+                "element_pos_shrink": 0,
+                "excludePriority": [],
+                "indicatorRightMargin": "15px",
+                "recursive": true,
+                "repeater_alignContent": "stretch",
+                "repeater_alignItems": "stretch",
+                "repeater_direction": "column",
+                "repeater_justify": "flex-start",
+                "repeater_useDefaultViewHeigh": true,
+                "repeater_useDefaultViewWidth": false,
+                "repeater_wrap": "wrap",
+                "sortOrderAsc": false,
+                "tagPaths": [
+                  "[default]test"
+                ],
+                "updateMap": "",
+                "valueTable": [
+                  {
+                    "style": "AlarmRepeater/MultiStatusIndicatorFault",
+                    "value": true
+                  },
+                  {
+                    "style": "AlarmRepeater/MultiStatusIndicatorOn",
+                    "value": false
+                  }
+                ]
+              },
+              "path": "AlarmRepeater/Repeater"
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "fcUDT"
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "borderColor": "#D5D5D5",
+            "borderStyle": "solid",
+            "borderWidth": 1,
+            "margin": 5,
+            "padding": 10
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "lblTitleAtomic"
+            },
+            "props": {
+              "style": {
+                "fontSize": 20,
+                "fontWeight": "bold"
+              },
+              "text": "Alarms on an Atomic tag"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "evRepeater"
+            },
+            "props": {
+              "params": {
+                "alarmReplaceNameOriginal": [],
+                "alarmReplaceNameValue": [],
+                "element_MarginBot": "2px",
+                "element_MarginLeft": "0px",
+                "element_MarginRight": "15px",
+                "element_MarginTop": "0px",
+                "element_pos_basis": "auto",
+                "element_pos_grow": 1,
+                "element_pos_shrink": 0,
+                "excludePriority": [],
+                "indicatorRightMargin": "15px",
+                "recursive": true,
+                "repeater_alignContent": "stretch",
+                "repeater_alignItems": "stretch",
+                "repeater_direction": "column",
+                "repeater_justify": "flex-start",
+                "repeater_useDefaultViewHeigh": true,
+                "repeater_useDefaultViewWidth": false,
+                "repeater_wrap": "wrap",
+                "siteName": "",
+                "sortOrderAsc": false,
+                "tagPaths": [
+                  "[default]test/AlarmFolder/AlarmTag3"
+                ],
+                "updateMap": "",
+                "valueTable": [
+                  {
+                    "style": "AlarmRepeater/MultiStatusIndicatorFault",
+                    "value": true
+                  },
+                  {
+                    "style": "AlarmRepeater/MultiStatusIndicatorOn",
+                    "value": false
+                  }
+                ]
+              },
+              "path": "AlarmRepeater/Repeater"
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "fcAtomic"
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "borderColor": "#D5D5D5",
+            "borderStyle": "solid",
+            "borderWidth": 1,
+            "margin": 5,
+            "padding": 10
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "lblTitleUDT"
+            },
+            "props": {
+              "style": {
+                "fontSize": 20,
+                "fontWeight": "bold"
+              },
+              "text": "Medium or Higher Level Alarms on an UDT tag "
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "evRepeater"
+            },
+            "props": {
+              "params": {
+                "excludePriority": [
+                  "Diagnostic",
+                  "Low",
+                  "Medium"
+                ],
+                "tagPaths": [
+                  "[default]test"
+                ]
+              },
+              "path": "AlarmRepeater/Repeater"
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "fcUDT_0"
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "borderColor": "#D5D5D5",
+            "borderStyle": "solid",
+            "borderWidth": 1,
+            "margin": 5,
+            "padding": 10
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

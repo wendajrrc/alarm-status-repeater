@@ -1,0 +1,332 @@
+{
+  "custom": {
+    "reload": false
+  },
+  "events": {
+    "system": {
+      "onStartup": {
+        "config": {
+          "script": "\tself.custom.reload \u003d False\n\tself.getChild(\"root\").getChild(\"fr\").props.instances \u003d None"
+        },
+        "scope": "G",
+        "type": "script"
+      }
+    }
+  },
+  "params": {
+    "alarmReplaceNameOriginal": [],
+    "alarmReplaceNameValue": [],
+    "element_MarginBot": "2px",
+    "element_MarginLeft": "0px",
+    "element_MarginRight": "15px",
+    "element_MarginTop": "0px",
+    "element_pos_basis": "auto",
+    "element_pos_grow": 1,
+    "element_pos_shrink": 0,
+    "excludePriority": [],
+    "indicatorRightMargin": "15px",
+    "recursive": true,
+    "repeater_alignContent": "stretch",
+    "repeater_alignItems": "stretch",
+    "repeater_direction": "column",
+    "repeater_justify": "flex-start",
+    "repeater_useDefaultViewHeigh": true,
+    "repeater_useDefaultViewWidth": false,
+    "repeater_wrap": "wrap",
+    "sortOrderAsc": false,
+    "tagPaths": [],
+    "updateMap": "",
+    "valueTable": [
+      {
+        "style": "AlarmRepeater/MultiStatusIndicatorFault",
+        "value": true
+      },
+      {
+        "style": "AlarmRepeater/MultiStatusIndicatorOn",
+        "value": false
+      }
+    ]
+  },
+  "propConfig": {
+    "params.alarmReplaceNameOriginal": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.alarmReplaceNameValue": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.element_MarginBot": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.element_MarginLeft": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.element_MarginRight": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.element_MarginTop": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.element_pos_basis": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.element_pos_grow": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.element_pos_shrink": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.excludePriority": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.indicatorRightMargin": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.recursive": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.repeater_alignContent": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.repeater_alignItems": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.repeater_direction": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.repeater_justify": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.repeater_useDefaultViewHeigh": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.repeater_useDefaultViewWidth": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.repeater_wrap": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.sortOrderAsc": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.tagPaths": {
+      "onChange": {
+        "enabled": null,
+        "script": "\tself.getChild(\"root\").getChild(\"fr\").loadData()"
+      },
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.updateMap": {
+      "onChange": {
+        "enabled": null,
+        "script": "\tself.getChild(\"root\").getChild(\"fr\").loadData()"
+      },
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.valueTable": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 329,
+      "width": 340
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "system": {
+            "onStartup": {
+              "config": {
+                "script": "\tself.loadData()"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "fr"
+        },
+        "position": {
+          "grow": 1
+        },
+        "propConfig": {
+          "custom.tagPaths": {
+            "binding": {
+              "config": {
+                "path": "view.params.tagPaths"
+              },
+              "type": "property"
+            },
+            "onChange": {
+              "enabled": null,
+              "script": "#\tsystem.perspective.print(\"Value from fr property change: %s\" % currentValue.value)\n\tif len(currentValue.value) \u003e 0:\n\t\tself.loadData()\n\t\t"
+            },
+            "persistent": false
+          },
+          "props.alignContent": {
+            "binding": {
+              "config": {
+                "path": "view.params.repeater_alignContent"
+              },
+              "type": "property"
+            }
+          },
+          "props.alignItems": {
+            "binding": {
+              "config": {
+                "path": "view.params.repeater_alignItems"
+              },
+              "type": "property"
+            }
+          },
+          "props.direction": {
+            "binding": {
+              "config": {
+                "path": "view.params.repeater_direction"
+              },
+              "type": "property"
+            }
+          },
+          "props.elementPosition.basis": {
+            "binding": {
+              "config": {
+                "path": "view.params.element_pos_basis"
+              },
+              "type": "property"
+            }
+          },
+          "props.elementPosition.grow": {
+            "binding": {
+              "config": {
+                "path": "view.params.element_pos_grow"
+              },
+              "type": "property"
+            }
+          },
+          "props.elementPosition.shrink": {
+            "binding": {
+              "config": {
+                "path": "view.params.element_pos_shrink"
+              },
+              "type": "property"
+            }
+          },
+          "props.elementStyle.marginBottom": {
+            "binding": {
+              "config": {
+                "path": "view.params.element_MarginBot"
+              },
+              "type": "property"
+            }
+          },
+          "props.elementStyle.marginLeft": {
+            "binding": {
+              "config": {
+                "path": "view.params.element_MarginLeft"
+              },
+              "type": "property"
+            }
+          },
+          "props.elementStyle.marginRight": {
+            "binding": {
+              "config": {
+                "path": "view.params.element_MarginRight"
+              },
+              "type": "property"
+            }
+          },
+          "props.elementStyle.marginTop": {
+            "binding": {
+              "config": {
+                "path": "view.params.element_MarginTop"
+              },
+              "type": "property"
+            }
+          },
+          "props.justify": {
+            "binding": {
+              "config": {
+                "path": "view.params.repeater_justify"
+              },
+              "type": "property"
+            }
+          },
+          "props.useDefaultViewHeight": {
+            "binding": {
+              "config": {
+                "path": "view.params.repeater_useDefaultViewHeigh"
+              },
+              "type": "property"
+            }
+          },
+          "props.useDefaultViewWidth": {
+            "binding": {
+              "config": {
+                "path": "view.params.repeater_useDefaultViewWidth"
+              },
+              "type": "property"
+            }
+          },
+          "props.wrap": {
+            "binding": {
+              "config": {
+                "path": "view.params.repeater_wrap"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "elementPosition": {},
+          "instances": null,
+          "path": "AlarmRepeater/MultiStatusIndicatorDisplayLabel"
+        },
+        "scripts": {
+          "customMethods": [
+            {
+              "name": "loadData",
+              "params": [],
+              "script": "\ttagPaths \u003d self.view.params.tagPaths\n#\tsystem.perspective.print(\"Current tag path is %s \" % tagPaths)\n#\tsystem.perspective.print(\"Current tag path from label is %s \" % self.getSibling(\"Label\").props.text)\n\t\n\tif tagPaths is not None and len(tagPaths) \u003e 0:\n\t\ttemplateParams \u003d {\n\t\t\t\"valueTable\": self.view.params.valueTable,\n\t\t\t\"indicatorRightMargin\": self.view.params.indicatorRightMargin\n\t\t}\n\t\tsortAsc \u003d self.view.params.sortOrderAsc\n\t\taro \u003d self.view.params.alarmReplaceNameOriginal\n\t\tarv \u003d self.view.params.alarmReplaceNameValue\n\t\t\n#\t\tself.props.instances \u003d RRC.Manufacturer.General.AlarmIndicatorsMap.loadRepeater(tagPaths, templateParams, sortAsc, aro, arv)\n\t\tself.props.instances \u003d AlarmRepeater.Repeater.loadRepeater(tagPaths, templateParams, recursive\u003dself.view.params.recursive, sortAsc\u003dsortAsc, alarmNameReplaceOrigin\u003daro,\n\t\t                  alarmNameReplaceValue\u003darv, excludePriority\u003dset(self.view.params.excludePriority))"
+            }
+          ],
+          "extensionFunctions": null,
+          "messageHandlers": []
+        },
+        "type": "ia.display.flex-repeater"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

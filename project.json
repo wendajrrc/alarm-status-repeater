@@ -1,0 +1,6 @@
+{
+  "title": "RRC_IG",
+  "description": "The project for uploading Ignition Exchange resources.",
+  "enabled": true,
+  "inheritable": false
+}

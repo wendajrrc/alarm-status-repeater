@@ -1,0 +1,71 @@
+{
+  "custom": {},
+  "params": {
+    "tagPath": "[default]RRCPV/Device/Simulation/Sim1/Station_1/pump_fault",
+    "valueTable": [
+      {
+        "style": "AlarmRepeater/MultiStatusIndicatorFault",
+        "value": true
+      },
+      {
+        "style": "AlarmRepeater/MultiStatusIndicatorOn",
+        "value": false
+      }
+    ]
+  },
+  "propConfig": {
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.valueTable": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 15,
+      "width": 15
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "lblValue"
+        },
+        "position": {
+          "grow": 1
+        },
+        "propConfig": {
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "expression": "tag({view.params.tagPath})"
+              },
+              "transforms": [
+                {
+                  "code": "\tfor row in self.view.params.valueTable:\n\t\tif row[\u0027value\u0027] \u003d\u003d value:\n\t\t\treturn row[\u0027style\u0027]\n\t\n\treturn self.view.params.valueTable[-1][\u0027style\u0027]",
+                  "type": "script"
+                }
+              ],
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {}
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

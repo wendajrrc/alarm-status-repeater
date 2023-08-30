@@ -1,0 +1,112 @@
+{
+  "custom": {},
+  "params": {
+    "displayName": "Enter Display Name",
+    "indicatorRightMargin": "15px",
+    "tagPath": "[default]IgnitionExchange/CustomAlarm",
+    "valueTable": [
+      {
+        "style": "AlarmRepeater/MultiStatusIndicatorFault",
+        "value": true
+      },
+      {
+        "style": "AlarmRepeater/MultiStatusIndicatorOn",
+        "value": false
+      }
+    ]
+  },
+  "propConfig": {
+    "params.displayName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.indicatorRightMargin": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.valueTable": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 26,
+      "width": 300
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "lblLabel"
+        },
+        "position": {
+          "grow": 1
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.displayName"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "evValue"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "path": "view.params.tagPath"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.valueTable": {
+            "binding": {
+              "config": {
+                "path": "view.params.valueTable"
+              },
+              "type": "property"
+            }
+          },
+          "props.style.marginRight": {
+            "binding": {
+              "config": {
+                "path": "view.params.indicatorRightMargin"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "path": "AlarmRepeater/MultiStatusIndicatorDisplay",
+          "useDefaultViewHeight": true,
+          "useDefaultViewWidth": true
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "alignItems": "center"
+    },
+    "type": "ia.container.flex"
+  }
+}
