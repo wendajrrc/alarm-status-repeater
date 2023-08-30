@@ -93,6 +93,10 @@
       "persistent": true
     },
     "params.recursive": {
+      "onChange": {
+        "enabled": null,
+        "script": "\tself.getChild(\"root\").getChild(\"fr\").loadData()"
+      },
       "paramDirection": "input",
       "persistent": true
     },
