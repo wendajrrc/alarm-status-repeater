@@ -58,7 +58,7 @@
                 "element_pos_shrink": 0,
                 "excludePriority": [],
                 "indicatorRightMargin": "15px",
-                "recursive": true,
+                "recursive": false,
                 "repeater_alignContent": "stretch",
                 "repeater_alignItems": "stretch",
                 "repeater_direction": "column",
@@ -68,7 +68,6 @@
                 "repeater_wrap": "wrap",
                 "sortOrderAsc": false,
                 "tagPaths": [
-                  "[default]test"
                 ],
                 "updateMap": "",
                 "valueTable": [
