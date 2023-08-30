@@ -39,6 +39,9 @@ def loadRepeater(tagPaths, templateParams, sortAsc=True, alarmNameReplaceOrigin=
         alarmReplace = {key: value for key, value in zip(alarmNameReplaceOrigin, alarmNameReplaceValue)}
 
     for tagPath in tagPaths:
+        if not system.tag.exists(tagPath):
+            continue
+
         config = system.tag.getConfiguration(tagPath, recursive)[0]
         getAlarmsPaths(config, str(tagPath), instances=tr_ins,
                        templateParams=templateParams, recursive=recursive, alarmReplace=alarmReplace,
